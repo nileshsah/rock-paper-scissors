@@ -4,7 +4,7 @@
   <groupId>com.imc.rps</groupId>
   <artifactId>rock-paper-scissors</artifactId>
   <packaging>jar</packaging>
-  <version>1.0-SNAPSHOT</version>
+  <version>1.0</version>
   <name>rock-paper-scissors</name>
 
   <properties>
