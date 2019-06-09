@@ -4,7 +4,7 @@ import com.imc.rps.model.Choice;
 
 import java.util.function.Predicate;
 
-public interface EvaluatorRule extends Predicate<Choice> {
+public interface WinningRule extends Predicate<Choice> {
 
   default boolean beats(Choice t) {
     return test(t);

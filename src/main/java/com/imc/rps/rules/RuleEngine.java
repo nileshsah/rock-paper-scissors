@@ -1,8 +1,8 @@
 package com.imc.rps.rules;
 
 import com.imc.rps.model.Choice;
-import com.imc.rps.utils.EvaluatorRule;
+import com.imc.rps.utils.WinningRule;
 
 public interface RuleEngine {
-  EvaluatorRule get(Choice c);
+  WinningRule get(Choice c);
 }

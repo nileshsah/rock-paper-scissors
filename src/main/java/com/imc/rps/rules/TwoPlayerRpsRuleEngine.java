@@ -3,13 +3,13 @@ package com.imc.rps.rules;
 import com.google.common.collect.ImmutableMap;
 import com.imc.rps.exception.UndefinedRuleException;
 import com.imc.rps.model.Choice;
-import com.imc.rps.utils.EvaluatorRule;
+import com.imc.rps.utils.WinningRule;
 
 import java.util.Map;
 
 public class TwoPlayerRpsRuleEngine implements RuleEngine{
 
-  private final Map<Choice, EvaluatorRule> beatingRules;
+  private final Map<Choice, WinningRule> winningRules;
 
   private static TwoPlayerRpsRuleEngine ruleEngine = new TwoPlayerRpsRuleEngine();
 
@@ -18,7 +18,7 @@ public class TwoPlayerRpsRuleEngine implements RuleEngine{
   }
 
   private TwoPlayerRpsRuleEngine() {
-    this.beatingRules = ImmutableMap.<Choice, EvaluatorRule>of(
+    this.winningRules = ImmutableMap.<Choice, WinningRule>of(
         Choice.ROCK, opponent -> opponent == Choice.SCISSORS,
         Choice.PAPER, opponent -> opponent == Choice.ROCK,
         Choice.SCISSORS, opponent -> opponent == Choice.PAPER
@@ -26,11 +26,11 @@ public class TwoPlayerRpsRuleEngine implements RuleEngine{
   }
 
   @Override
-  public EvaluatorRule get(Choice choice) {
-    if (!beatingRules.containsKey(choice)) {
+  public WinningRule get(Choice choice) {
+    if (!winningRules.containsKey(choice)) {
       throw new UndefinedRuleException("Undefined rule for choice " + choice.name());
     }
-    return beatingRules.get(choice);
+    return winningRules.get(choice);
   }
 
 }
