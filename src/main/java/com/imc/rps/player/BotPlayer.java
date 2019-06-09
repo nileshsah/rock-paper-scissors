@@ -1,6 +1,5 @@
 package com.imc.rps.player;
 
-import com.imc.rps.exception.InvalidPlayerNameException;
 import com.imc.rps.model.Choice;
 
 import java.time.LocalDateTime;
@@ -15,19 +14,20 @@ public class BotPlayer extends Player {
 
   private final Random randomNumberGenerator;
 
-  public static BotPlayer createWithName(String name) throws InvalidPlayerNameException {
+  public static BotPlayer createWithName(String name) {
     return create(name, Long.valueOf(LocalDateTime.now().getNano()));
   }
 
-  public static BotPlayer create(String name, Long seed) throws InvalidPlayerNameException {
+  public static BotPlayer create(String name, Long seed) {
     return new BotPlayer(name, seed);
   }
 
+  @Override
   public Choice getChoice() {
     return choices.get(randomNumberGenerator.nextInt(choices.size()));
   }
 
-  private BotPlayer(String playerName, Long seed) throws InvalidPlayerNameException {
+  private BotPlayer(String playerName, Long seed) {
     super(playerName);
     this.randomNumberGenerator = new Random(seed);
   }

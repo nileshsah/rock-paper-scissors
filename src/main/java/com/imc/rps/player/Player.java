@@ -13,12 +13,12 @@ public abstract class Player {
     return playerName;
   }
 
-  protected Player(String name) throws InvalidPlayerNameException {
+  protected Player(String name) {
     verifyIfNameIsValid(name);
     this.playerName = name;
   }
 
-  private static void verifyIfNameIsValid(String name) throws InvalidPlayerNameException {
+  private static void verifyIfNameIsValid(String name) {
     if (StringUtils.isEmpty(name) || !StringUtils.isAlphanumeric(name)) {
       throw new InvalidPlayerNameException("Player name cannot be empty and must contain only alphanumeric characters");
     }
