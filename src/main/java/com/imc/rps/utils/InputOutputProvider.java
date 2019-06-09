@@ -13,6 +13,10 @@ public class InputOutputProvider {
     return inputScanner.next();
   }
 
+  public synchronized Integer getInt() {
+    return inputScanner.nextInt();
+  }
+
   public synchronized void printWithNewLine(String printableString) {
     System.out.println(printableString);
   }
