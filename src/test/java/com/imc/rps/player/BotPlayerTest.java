@@ -2,7 +2,6 @@ package com.imc.rps.player;
 
 import com.imc.rps.exception.InvalidPlayerNameException;
 import com.imc.rps.model.Choice;
-import lombok.SneakyThrows;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -37,6 +36,5 @@ public class BotPlayerTest  {
     Assertions.assertEquals(Choice.PAPER, computerBot.getChoice());
     Assertions.assertEquals(Choice.SCISSORS, computerBot.getChoice());
   }
-
 
 }
