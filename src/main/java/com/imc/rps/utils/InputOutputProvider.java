@@ -19,9 +19,11 @@ public class InputOutputProvider {
 
   public synchronized void printWithNewLine(String printableString) {
     System.out.println(printableString);
+    System.out.flush();
   }
 
   public synchronized void print(String printableString) {
     System.out.print(printableString);
+    System.out.flush();
   }
 }
