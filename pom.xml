@@ -16,6 +16,7 @@
     <lombok.version>1.18.8</lombok.version>
     <junit.version>5.1.0</junit.version>
     <mockito.version>2.27.0</mockito.version>
+    <google.collections.version>1.0-rc2</google.collections.version>
   </properties>
 
   <dependencies>
@@ -25,6 +26,14 @@
       <artifactId>commons-lang3</artifactId>
       <version>${apache.commons.lang3.version}</version>
     </dependency>
+
+    <!-- https://mvnrepository.com/artifact/com.google.collections/google-collections -->
+    <dependency>
+      <groupId>com.google.collections</groupId>
+      <artifactId>google-collections</artifactId>
+      <version>${google.collections.version}</version>
+    </dependency>
+
 
     <dependency>
       <groupId>org.projectlombok</groupId>
